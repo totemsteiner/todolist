@@ -16,11 +16,11 @@ def send_mail():
         print(data)
         f.close()
         msg = MIMEText(data)
-        msg['From'] = "yourmail"
-        msg['To'] = "yourmail"
+        msg['From'] = "kuhl.lukas@gmx.de"
+        msg['To'] = "kuhl.lukas@gmx.de"
         msg['Subject'] = "ToDo"
         password = input("pw: ")
-        smtp_server = smtplib.SMTP(host='provider smtp server', port=587)
+        smtp_server = smtplib.SMTP(host='mail.gmx.net', port=587)
         smtp_server.starttls()
         smtp_server.login(msg['From'], password)
         smtp_server.sendmail(msg['From'], msg['To'], msg.as_string())
@@ -32,10 +32,10 @@ def send_mail():
 
 
 def todo_input():
-    todo = input("What are your next tasks: \n")
+    todo = input("ToDo: \n")
     file = open("ToDo.txt", "a")
     for i in range(1):
-        file.write("new Task %s\r\n" % todo)
+        file.write("new Task: %s\r\n" % todo)
     file.close()
     send_mail()
 
@@ -54,7 +54,7 @@ def new_list():
     todo = input("ToDo: \n")
     file = open(newlist, "a")
     for i in range(1):
-        file.write("new Task %s\r\n" % todo)
+        file.write("new Task: %s\r\n" % todo)
     file.close()
 
 
