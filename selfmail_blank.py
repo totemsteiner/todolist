@@ -16,8 +16,8 @@ def send_mail():
         print(data)
         f.close()
         msg = MIMEText(data)
-        msg['From'] = "kuhl.lukas@gmx.de"
-        msg['To'] = "kuhl.lukas@gmx.de"
+        msg['From'] = "your Mail"
+        msg['To'] = "your Mail"
         msg['Subject'] = "ToDo"
         password = input("pw: ")
         smtp_server = smtplib.SMTP(host='mail.gmx.net', port=587)
